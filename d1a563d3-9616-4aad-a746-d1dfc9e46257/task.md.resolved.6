@@ -1,6 +1,0 @@
-# Tasks
-
-- [x] Remove Buy Now CTA from Hero Section <!-- id: 0 -->
-- [x] Update images in 'Made for peaceful nights' section <!-- id: 1 -->
-- [x] Update text under 'Effortless Charging' <!-- id: 2 -->
-
