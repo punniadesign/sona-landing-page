@@ -1,0 +1,24 @@
+# Walkthrough - Meet Sona Hover Carousel
+
+I have transformed the static image in the "Meet Sona" section into an interactive carousel that cycles through images when hovered.
+
+## Changes
+
+### HTML
+#### [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Replaced the single image in `#meet-sona-carousel` with three images ([carousel-1.png](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/images/carousel-1.png), [carousel-2.png](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/images/carousel-2.png), [carousel-3.png](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/images/carousel-3.png)).
+- Added JavaScript logic to cycle the `active` class on these images when the container is hovered.
+- The cycle resets to the first image when the mouse leaves.
+
+### CSS
+#### [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- Updated `.meet-sona-image` to `position: relative`.
+- Added `.carousel-img` with `position: absolute`, `opacity: 0`, and a smooth transition.
+- Added `.carousel-img.active` with `opacity: 1`.
+
+## Verification Results
+
+### Manual Verification
+- Hovering over the image area in the "Meet Sona" section now triggers a slideshow of the product images.
+- The transition is smooth (cross-dissolve).
+- Moving the mouse away resets the view to the primary image.

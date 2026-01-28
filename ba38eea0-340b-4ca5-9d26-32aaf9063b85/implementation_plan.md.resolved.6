@@ -1,0 +1,47 @@
+# Implementation Plan - Scrollytelling Feature Section
+
+I will replace the static product grid with a sophisticated scroll-driven experience. The new section will be a tall container that pins the viewport (sticky), allowing users to scroll "through" the features, expanding them one by one.
+
+## Proposed Changes
+
+### HTML
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Replace `.card-grid` (and possibly the `.product-intro` wrapper) with a new structure:
+    - `.scrolly-features-section` (Total height ~500vh to create scroll space).
+    - `.sticky-stage` (Sticky container, 100vh).
+    - Inside stage:
+        - `.previews-row`: Horizontal flex container of icons/small titles for all 5 features.
+        - `.feature-display`: Container for the expanded glass cards.
+        - 5 `.feature-card` items, populated with the images and text.
+
+### CSS
+#### [MODIFY] [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- **Scrolly Setup**:
+    - `.scrolly-features-section`: `height: 500vh`, `position: relative`.
+    - `.sticky-stage`: `position: sticky`, `top: 0`, `height: 100vh`, `display: flex`, `flex-direction: column`.
+- **Previews Row**:
+    - Placed at the top or bottom. Small opacity when inactive. Active one is highlighted.
+- **Feature Cards**:
+    - `position: absolute`, `top: 50%`, `left: 50%`.
+    - `width: 80%`, `max-width: 900px`.
+    - Layout: Grid/Flex with Image Left, Text Right.
+    - Style: Glassmorphism (`backdrop-filter`, semi-transparent white/pastel).
+    - State:
+        - Default: `opacity: 0`, `transform: translate(-50%, -40%) scale(0.9)`.
+        - `.active`: `opacity: 1`, `transform: translate(-50%, -50%) scale(1)`.
+
+### JavaScript
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Add scroll listener (performant, using `requestAnimationFrame` or simple calculation).
+- Logic:
+    - Get bounds of `.scrolly-features-section`.
+    - Calculate scroll percentage (0 to 1).
+    - Break into segments (e.g., 0-0.2 = Feature 1, 0.2-0.4 = Feature 2...).
+    - Add `.active` class to the corresponding feature and preview item.
+
+## Verification Plan
+### Manual Verification
+- Scroll down to the features section.
+- Verify the section "sticks".
+- Continue scrolling: Cards should seamlessly fade in/out and expand one by one.
+- Verify the layout of expanded cards (Image Left, Text Right).

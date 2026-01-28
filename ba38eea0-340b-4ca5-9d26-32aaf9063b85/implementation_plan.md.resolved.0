@@ -1,0 +1,26 @@
+# Implementation Plan - Cursor Clearing Effect
+
+The goal is to modify the background gradient so that it "clears" (becomes transparent/reveals the solid background) around the cursor as it moves.
+
+## User Review Required
+> [!NOTE]
+> This change involves using CSS `mask-image`. Most modern browsers support this, but older browsers might just show the full gradient without the clearing effect. This is an acceptable progressive enhancement.
+
+## Proposed Changes
+
+### CSS
+#### [MODIFY] [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- Move the base background color `var(--color-pal-cream)` from `#interactive-bg` to `body` (or ensure body has it) so that when the blobs are masked out, the solid background is visible.
+- Update `#interactive-bg`:
+    - Remove `background: var(--color-pal-cream)` (or set to transparent).
+    - Add `mask-image` and `-webkit-mask-image` to create a radial gradient mask.
+    - The mask will be a circle at the cursor position (defined by `--mouse-x` and `--mouse-y`) that is transparent at the center and opaque outside.
+    - Formula: `radial-gradient(circle at calc(var(--mouse-x) * 100%) calc(var(--mouse-y) * 100%), transparent 100px, black 250px)` (adjusting sizes for the "clearing" radius).
+
+## Verification Plan
+
+### Manual Verification
+- Open [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html) in the browser.
+- Move the mouse around the screen.
+- Verify that the colorful blobs disappear/fade out immediately around the cursor, revealing the solid cream background.
+- Verify that the clearing effect follows the cursor smoothly.

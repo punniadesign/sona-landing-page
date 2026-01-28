@@ -1,0 +1,20 @@
+# Walkthrough - Immersive Video Mode
+
+I have implemented an immersive mode where the navigation bar automatically hides when the user scrolls to the video section, minimizing distractions.
+
+## Changes
+
+### CSS
+#### [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- Added a transition to `.pill-nav` for smooth movement.
+- Defined `.pill-nav.nav-hidden` to translate the navigation bar upwards and fade it out.
+
+### JavaScript
+#### [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Updated the `IntersectionObserver` for the video section to also toggle the `nav-hidden` class on the navigation bar.
+
+## Verification Results
+
+### Manual Verification
+- **Scroll to Video**: The top navigation bar should slide up and disappear as the video section enters the viewport.
+- **Scroll Away**: The navigation bar should slide back down and reappear when you scroll past the video section (either up or down).

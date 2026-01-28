@@ -1,0 +1,24 @@
+# Walkthrough - Scroll-Triggered Video Section
+
+I have added a new video section that smoothly animates into view as you scroll past the "Meet Sona" section.
+
+## Changes
+
+### HTML
+#### [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Added a `.video-reveal-section` containing a full-width video container.
+- Configured the video to autoplay, loop, and mute.
+- Added `IntersectionObserver` logic to toggle the `.in-view` class based on scroll position.
+
+### CSS
+#### [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- Styled `.video-reveal-section` with an initial `opacity: 0` and `transform: scale(0.95)`.
+- Added `.in-view` state to animate to full opacity and scale.
+- Added drop shadows and rounded corners to the video container.
+
+## Verification Results
+
+### Manual Verification
+- **Scroll Down**: The video section should pop/fade in smoothly as it enters the viewport.
+- **Scroll Away**: The section should fade out/shrink slightly when scrolled out of view.
+- **Video Playback**: The video should autoplay (muted) if the file `hero-render.mp4` is present in `assets/video/`.

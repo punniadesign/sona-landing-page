@@ -1,0 +1,29 @@
+# Implementation Plan - Immersive Video Mode
+
+The goal is to hide the floating navigation bar when the user scrolls to the video section, creating a distraction-free viewing experience.
+
+## Proposed Changes
+
+### CSS
+#### [MODIFY] [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- Update `.pill-nav`:
+    - Add `transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);` (matching other smooth animations).
+- Add `.pill-nav.nav-hidden`:
+    - `transform: translateX(-50%) translateY(-200%);` (Move up and out, maintaining horizontal center).
+    - `opacity: 0;`
+
+### JavaScript
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Update the existing `IntersectionObserver` for `.video-reveal-section`.
+- Get reference to `document.querySelector('.pill-nav')`.
+- Inside the callback:
+    - If `entry.isIntersecting`: add `nav-hidden` to nav.
+    - Else: remove `nav-hidden`.
+
+## Verification Plan
+
+### Manual Verification
+- Scroll down towards the video section.
+- Observe the nav bar sliding up and fading out as the video reveals.
+- Scroll past the video section.
+- Observe the nav bar sliding back down into view.

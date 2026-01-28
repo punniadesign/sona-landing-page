@@ -1,0 +1,29 @@
+# Walkthrough - Scrollytelling Features
+
+I have completely transformed the "Product Introduction" section into an immersive, scroll-driven experience. Instead of a static grid, users now discover features one by one as they scroll.
+
+## Changes
+
+### HTML
+#### [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Replaced the `.card-grid` with a `.scrolly-features-section`.
+- Added a `.sticky-stage` that stays pinned during the scroll.
+- Included a `.previews-row` for minimizing features and a `.feature-display` for the expanded cards.
+
+### CSS
+#### [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- **Sticky Layout**: Defined a `500vh` scroll track to allow plenty of time for reading each feature.
+- **Glassmorphism Spec**: Updated the `.feature-card` to use a sophisticated glass effect, positioning it centrally.
+- **Transitions**: Added smooth opacity and transform transitions for the "unfold" animation effect.
+
+### JavaScript
+#### [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Implemented a scroll listener that maps the user's progress through the section (0% to 100%) to the 5 feature cards.
+- Automatically toggles the `.active` class on the visible feature and its corresponding preview tab.
+
+## Verification Results
+
+### Manual Verification
+- **Scroll Interaction**: As you scroll down the "Made for peaceful nights" section, the page should "stick".
+- **Sequence**: The feature cards (Gentle Design, Co-sleeping Safe, etc.) should fade in and expand one after another, replacing the previous one.
+- **Progress**: The small preview row at the top should highlight the current feature.

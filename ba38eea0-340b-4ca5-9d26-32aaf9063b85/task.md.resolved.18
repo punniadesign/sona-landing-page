@@ -1,0 +1,36 @@
+# Tasks
+
+- [x] Inspect existing CSS for `#interactive-bg` <!-- id: 0 -->
+- [x] Design the gradient clearing effect using CSS variables <!-- id: 1 -->
+- [x] Implement the effect in CSS <!-- id: 2 -->
+- [x] Verify the effect <!-- id: 3 -->
+- [x] Update [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html) to include multiple carousel images in `meet-sona-section` <!-- id: 4 -->
+- [x] Add CSS for stacking images and handling opacity transitions <!-- id: 5 -->
+- [x] Add JS to cycle images on hover <!-- id: 6 -->
+- [x] Verify the hover carousel effect <!-- id: 7 -->
+- [x] Create `assets/video` directory (already exists) and placeholder video instructions <!-- id: 8 -->
+- [x] Add HTML for new Video Section after Meet Sona <!-- id: 9 -->
+- [x] Add CSS for standard video section layout and animation states <!-- id: 10 -->
+- [x] Add JS IntersectionObserver for scroll-triggered animation <!-- id: 11 -->
+- [x] Verify the animation <!-- id: 12 -->
+- [x] Add transition properties to `.pill-nav` in CSS <!-- id: 13 -->
+- [x] Create `.pill-nav.nav-hidden` state in CSS <!-- id: 14 -->
+- [x] Update JS IntersectionObserver to toggle `.nav-hidden` on the nav element <!-- id: 15 -->
+- [x] Verify the nav hide/show behavior <!-- id: 16 -->
+- [x] Update [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html) to add specific classes modifiers to product cards (e.g., `card-1`, `card-2`, `card-3`) <!-- id: 17 -->
+- [x] Update CSS to implement staggered grid layout <!-- id: 18 -->
+- [x] Apply pastel backgrounds (`--color-pal-*`) to individual cards <!-- id: 19 -->
+- [x] Add playful hover animations (tilt, scale, float) <!-- id: 20 -->
+- [x] Verify the new design <!-- id: 21 -->
+- [x] Add 2 new cards to [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html) (Roll Detection, Breathing Tracking) <!-- id: 22 -->
+- [x] Remove staggered/rotation CSS from [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css) <!-- id: 23 -->
+- [x] Implement responsive aligned grid for 5 items <!-- id: 24 -->
+- [x] Verify the aligned layout with new features <!-- id: 25 -->
+- [x] Replace `card-grid` HTML with `.feature-scroll-track` structure <!-- id: 26 -->
+- [x] Implement CSS for sticky container, preview row, and expanded glass cards <!-- id: 27 -->
+- [x] Add JS to track scroll progress and update active feature state <!-- id: 28 -->
+- [x] Verify the scrollytelling interaction <!-- id: 29 -->
+- [x] Generate [cursor-shell.png](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/images/cursor-shell.png) using existing assets or new generation <!-- id: 30 -->
+- [x] Update [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css) to set the custom cursor <!-- id: 31 -->
+- [x] Verify the cursor appearance <!-- id: 32 -->
+- [x] Debug cursor: Switch to SVG for reliable rendering <!-- id: 33 -->

@@ -1,0 +1,17 @@
+# Walkthrough - Cursor Clearing Effect
+
+I have implemented a dynamic "clearing" effect where the background gradient fades away around the cursor, revealing the solid background color underneath.
+
+## Changes
+
+### CSS
+#### [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- Moved the base background color `var(--color-pal-cream)` to the `body` element.
+- Applied a `mask-image` (and `-webkit-mask-image`) to the `#interactive-bg` container.
+- The mask uses a `radial-gradient` tracking the mouse position (`--mouse-x`, `--mouse-y`) to make the container transparent near the cursor.
+
+## Verification Results
+
+### Manual Verification
+- The background blobs should now disappear in a circle around the mouse cursor as it moves across the screen.
+- The transition from the blob layer to the solid background should be smooth due to the gradient mask.

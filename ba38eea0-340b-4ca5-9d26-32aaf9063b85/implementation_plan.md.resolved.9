@@ -1,0 +1,29 @@
+# Implementation Plan - Emotional Quote Section
+
+I will add a high-impact, text-only section with a "reveal" animation to emphasize the emotional core of the product.
+
+## Proposed Changes
+
+### HTML
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Insert a new `<section class="emotional-quote-section">` after the scrolly features and before the curved divider.
+- Content: `<h2 class="animate-text">...</h2>`. Wraps text in spans for staggered animation if needed.
+
+### CSS
+#### [MODIFY] [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- `.emotional-quote-section`: `min-height: 60vh`, `display: flex`, `align-items: center`, `justify-content: center`, `text-align: center`.
+- Typography: Large (`3.5rem`+), `font-weight: 500` or `bold`, `line-height: 1.2`. color: `var(--color-primary-dark)`.
+- **Animation**:
+    - Initial state: `opacity: 0`, `transform: translateY(30px)`, `filter: blur(10px)`.
+    - Active state (`.in-view`): `opacity: 1`, `transform: translateY(0)`, `filter: blur(0)`.
+    - Transition: `all 1.2s ease-out`.
+
+### JavaScript
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Use the existing `IntersectionObserver` to target `.emotional-quote-section` (or the text inside it) and toggle the `.in-view` class.
+
+## Verification Plan
+### Manual Verification
+- Scroll past the features.
+- Observe the text smoothly fading in and un-blurring as it enters the viewport.
+- Check responsiveness on mobile (font size scaling).

@@ -1,0 +1,17 @@
+# Implementation Plan - Fix Observer Bug
+
+The issue is that the shared `observer` hardcodes logic for `videoSection`. I will separate the logic.
+
+## Proposed Changes
+
+### JavaScript
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Create a dedicated `quoteObserver` for the `.reveal-text` element.
+- Logic:
+    - If intersecting -> Add `in-view`.
+    - Else -> Remove `in-view` (or keep it if we want it to stay revealed).
+
+## Verification Plan
+### Manual Verification
+- Scroll to quote section.
+- Text should now appear.

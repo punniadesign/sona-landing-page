@@ -1,0 +1,21 @@
+# Implementation Plan - Organic Trust Section Background
+
+I will replace the rigid/standard wave dividers with soft, asymmetrical, organic curves (Pinterest aesthetic) for the "Why Parents Trust Sona" section.
+
+## Proposed Changes
+
+### HTML
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Replace the `<path>` data in `section-curve-top` and `section-curve-bottom` with new SVG paths that are more fluid and "blobby" rather than uniform sine waves.
+- Ensure the fill color matches the section background (`#4A5D52`).
+
+### CSS
+#### [MODIFY] [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- Ensure the `section-curve-top` and `section-curve-bottom` have the correct negative margins or positioning to overlap seamlessly with the `dark-section` to avoid thin white lines.
+
+## Verification Plan
+### Manual Verification
+- Scroll to "Why Parents Trust Sona".
+- Verify the top edge looks like a soft, organic drip or uneven wave.
+- Verify the bottom edge mirrors this organic feel.
+- Ensure no gaps between the SVG and the green background.

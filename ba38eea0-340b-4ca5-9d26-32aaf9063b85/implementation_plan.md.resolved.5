@@ -1,0 +1,26 @@
+# Implementation Plan - Product Section Update
+
+I will revert the "random" staggered layout to a clean, aligned grid and add the two requested features.
+
+## Proposed Changes
+
+### HTML
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Add two new cards to the `.card-grid`:
+    - **Roll Detection**: Image [assets/images/co-sleeping-baby.png](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/images/co-sleeping-baby.png), Text "Detects if the baby rolls into unsafe positions (onto belly or toward beds edge)".
+    - **Breathing Tracking**: Image [assets/images/illustration-baby.png](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/images/illustration-baby.png), Text "Tracks the baby’s breathing patterns during sleep to ensure no suffocation.".
+- Assign color classes: I'll cycle the existing `card-pink`, `card-sage`, `card-teal` classes or add new ones to cycle cleanly (e.g., Pink, Sage, Teal, Pink, Sage).
+
+### CSS
+#### [MODIFY] [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- **Grid Layout**: Restore a grid or flex-wrap layout that aligns items.
+    - `justify-content: center` to center the last row of 2 cards.
+- **Card Styling**:
+    - Remove `transform: rotate(...)` and `translateY(...)` from the color classes.
+    - Keep the colorful pastel backgrounds as they are nice, just remove the "unaligned" properties.
+    - Maintain the hover scale effect but keep it straight (`rotate(0)`).
+
+## Verification Plan
+### Manual Verification
+- Visual check: The 5 cards should be arranged in a neat grid (likely 3 atop 2, or flexible based on screen width), all straight and aligned.
+- Content check: "Roll Detection" and "Breathing Tracking" cards should be present with correct text.

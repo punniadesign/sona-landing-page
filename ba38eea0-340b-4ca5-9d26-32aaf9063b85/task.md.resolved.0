@@ -1,0 +1,6 @@
+# Tasks
+
+- [ ] Inspect existing CSS for `#interactive-bg` <!-- id: 0 -->
+- [ ] Design the gradient clearing effect using CSS variables <!-- id: 1 -->
+- [ ] Implement the effect in CSS <!-- id: 2 -->
+- [ ] Verify the effect <!-- id: 3 -->

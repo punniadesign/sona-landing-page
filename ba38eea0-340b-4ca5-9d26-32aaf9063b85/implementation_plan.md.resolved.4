@@ -1,0 +1,28 @@
+# Implementation Plan - Product Intro Redesign
+
+I will redesign the "Product Introduction" section to be more playful and interactive, replacing the standard uniform grid with a staggered, colorful layout.
+
+## Proposed Changes
+
+### HTML
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Add unique classes to the product cards: `card-pink`, `card-sage`, `card-teal` (or `card-1`, `card-2`, `card-3`) to target them individually.
+
+### CSS
+#### [MODIFY] [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- **Grid Layout**: Keep 3 columns but add `align-items: center` or similar to allow for vertical offsetting.
+- **Card Styling**:
+    - Remove the uniform glassmorphism white background.
+    - `card-pink`: Background `var(--color-pal-pink)`, transform `rotate(-2deg)`.
+    - `card-sage`: Background `var(--color-pal-sage)`, transform `translateY(30px)`.
+    - `card-teal`: Background `var(--color-pal-teal)`, transform `rotate(2deg)`.
+    - Add `transition: all 0.4s cubic-bezier(...)`.
+- **Hover Effects**:
+    - On hover: Scale up `1.05`, reset rotation to `0`, large shadow.
+    - Image inside: Slight parallax or zoom.
+
+## Verification Plan
+
+### Manual Verification
+- Check the visual layout: Cards should have different colors and slightly "messy/playful" alignment (rotations/offsets).
+- Hover over each card: It should "pop" into focus (straighten up and scale).

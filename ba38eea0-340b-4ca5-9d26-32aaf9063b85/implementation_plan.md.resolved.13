@@ -1,0 +1,27 @@
+# Implementation Plan - Reviews Section Update
+
+I will update the "Parents Love Sona" section with a new header, subtext, and a CTA button.
+
+## Proposed Changes
+
+### HTML
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Locate the Reviews section (likely `class="reviews-section"` or similar).
+- Change `<h2>Parents Love Sona</h2>` to `<h2>Trusted by 50,000+ Parents</h2>`.
+- Add `<p class="reviews-subtext">See why moms around the world choose Sona for their little ones.</p>`.
+- Add a button container next to the text content (requires flexbox wrapper).
+    - Wrapper: `<div class="reviews-header-content">` containing text.
+    - Button: `<a href="#reviews" class="btn-secondary">View More Reviews</a>`.
+
+### CSS
+#### [MODIFY] [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- Update `.reviews-section` header area to use `display: flex` with `justify-content: space-between` and `align-items: center`.
+- Style `.reviews-subtext` (color, size, spacing).
+- Ensure responsiveness (stack on mobile).
+
+## Verification Plan
+### Manual Verification
+- Scroll to reviews section.
+- Verify new text "Trusted by 50,000+ Parents".
+- Verify button "View More Reviews" is aligned to the right of the text.
+- Check mobile view to ensure it stacks gracefully.

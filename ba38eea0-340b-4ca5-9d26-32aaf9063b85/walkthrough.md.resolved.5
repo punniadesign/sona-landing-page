@@ -1,0 +1,29 @@
+# Walkthrough - Feature Expansion & Aligned Layout
+
+I have updated the "Product Introduction" section to include two new key features and refined the layout to be clean and aligned.
+
+## Changes
+
+### HTML
+#### [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Added **"Roll Detection"** card:
+    - Checks for unsafe sleep positions.
+    - Uses [co-sleeping-baby.png](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/images/co-sleeping-baby.png).
+- Added **"Breathing Tracking"** card:
+    - Monitors breathing patterns.
+    - Uses [illustration-baby.png](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/images/illustration-baby.png).
+
+### CSS
+#### [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- **Layout**: Reverted the staggered/rotated styles to a clean, centered flex grid.
+- **Card Styling**:
+    - Removed `transform: rotate` and `translateY` offsets.
+    - Kept the distinct pastel backgrounds (`Pink`, `Sage`, `Teal`) for visual variety.
+    - Standardized hover effects to a simple lift and scale.
+
+## Verification Results
+
+### Manual Verification
+- **Layout**: You should see 5 cards in total, arranged neatly (likely 3 on top, 2 on the bottom on desktop).
+- **Consitency**: All cards are straight and aligned.
+- **Content**: The new Roll Detection and Breathing Tracking info is present.

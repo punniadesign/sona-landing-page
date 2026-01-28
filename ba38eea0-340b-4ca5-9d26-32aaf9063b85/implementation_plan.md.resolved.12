@@ -1,0 +1,43 @@
+# Implementation Plan - Video Scrollytelling Section
+
+I will implement a new scroll-driven section where full-width feature panels (Text Left + Video Right) are revealed sequentially.
+
+## Proposed Changes
+
+### HTML
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Insert a new `<section class="video-scrolly-section">` **after** the `emotional-quote-section`.
+- Structure:
+    - `.video-sticky-container`: `height: 100vh`, `position: sticky`.
+    - **[NEW]** `.section-title-overlay`: "Take a closer look" heading.
+    - **[NEW]** `.nav-arrow`: Buttons with `nav-prev` and `nav-next` classes.
+    - `.video-panel`: 3 panels (Charge, Glow, Clip). Each contains:
+        - `.panel-text`: Left side content.
+        - `.panel-video`: Right side video ([charging.mp4](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/video/charging.mp4), [glow.mp4](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/video/glow.mp4), [clip.mp4](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/video/clip.mp4)).
+
+### CSS
+#### [MODIFY] [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- `.video-scrolly-section`: High height (e.g., `300vh`) to allow scrolling.
+- `.video-sticky-container`: Fixed full screen.
+- `.video-panel`: Absolute full screen, `opacity: 0`, `transition: opacity 1s`.
+- `.video-panel.active`: `opacity: 1`.
+- Layout: standard 50/50 flex/grid.
+- **[NEW]** Styles for `.section-title-overlay` (centered, absolute top).
+- **[NEW]** Styles for `.nav-arrow` (absolute sides, centered vertical).
+
+### JavaScript
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Add logic similar to the existing scrollytelling section.
+- Track scroll progress of `.video-scrolly-section`.
+- Activate the corresponding `.video-panel` based on scroll depth (0-33%, 33-66%, 66-100%).
+- **[NEW]** Add Click Listeners to arrows:
+    - Calculate `top` position of the section.
+    - Calculate scroll `step` (sectionHeight / panels).
+    - `scrollTo` current scroll + step (Next) or - step (Prev).
+
+## Verification Plan
+### Manual Verification
+- Scroll down to the new section.
+- Verify panels transition smoothly (Charge -> Glow -> Clip).
+- Verify videos play automatically when active.
+- **Click Arrows**: Verify clicking 'Next' smoothly scrolls to the next video panel.

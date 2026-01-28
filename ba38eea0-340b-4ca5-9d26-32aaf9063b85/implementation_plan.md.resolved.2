@@ -1,0 +1,42 @@
+# Implementation Plan - Scroll-Triggered Video Section
+
+I will add a new immersive video section immediately after the "Meet Sona" section. This section will feature a scroll-triggered entry animation.
+
+## User Review Required
+> [!IMPORTANT]
+> **Video Asset Missing**: I cannot download files directly from Google Drive. Please download the video from the link you provided and save it to:
+> `c:\Users\hp\.gemini\antigravity\scratch\sona-landing-page\assets\video\hero-render.mp4`
+
+## Proposed Changes
+
+### HTML
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Insert a new `<section class="video-reveal-section">` after the `.meet-sona-section`.
+- Include a `<video>` tag pointing to `assets/video/hero-render.mp4`.
+- Attributes: `autoplay`, `muted`, `loop`, `playsinline`.
+
+### CSS
+#### [MODIFY] [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- `.video-reveal-section`:
+    - Full width, padded.
+    - `opacity: 0`, `transform: scale(0.95) translateY(50px)` (Initial state).
+    - `transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1)`.
+- `.video-reveal-section.in-view`:
+    - `opacity: 1`, `transform: scale(1) translateY(0)`.
+- Video styling:
+    - Max-width 100%, rounded corners, shadow.
+
+### JavaScript
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Add an `IntersectionObserver` script.
+- Target `.video-reveal-section`.
+- When intersecting (threshold ~0.2), add class `in-view`.
+- Optional: When scrolling away, maybe remove the class or let it scroll out naturally. The request says "fade or slide out when user scrolls down further". Standard scrolling slides it out, but if we want a specific fade out, we can observe the exit. I will Implement a 2-way observer: add `in-view` on entry, remove it on exit (or allow it to fade out).
+
+## Verification Plan
+
+### Manual Verification
+- Scroll down the page.
+- Verify the video section animates in smoothly upon reaching it.
+- Verify the video plays.
+- Scroll past it and verify it scrolls away naturally (or fades if I implement fade-out).

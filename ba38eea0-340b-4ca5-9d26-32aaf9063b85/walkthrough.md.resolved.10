@@ -1,0 +1,25 @@
+# Walkthrough - Emotional Quote Section
+
+I have added a powerful new section that highlights the emotional value of Sona for parents.
+
+## Changes
+
+### HTML
+#### [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Added the `.emotional-quote-section` immediately after the scrolly features.
+- Contains the large typography summary: *"A mother’s biggest fear isn’t losing sleep..."*
+
+### CSS
+#### [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- **Typography**: Large, elegant font size (3.5rem) to make a statement.
+- **Animation**: Implemented a "reveal" effect where the text transitions from `opacity: 0`, `blur(15px)`, and `translateY(40px)` to a clear, centered state when viewed.
+
+### JavaScript
+#### [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Hooked the new section into the existing IntersectionObserver to trigger the animation at the perfect moment.
+
+## Verification Results
+
+### Manual Verification
+- **Scroll Reveal**: Scroll down past the features. As the new text enters the screen, it should smoothly fade in and sharpen (un-blur).
+- **Impact**: The large text and animation should draw full attention before moving to the Trust section.

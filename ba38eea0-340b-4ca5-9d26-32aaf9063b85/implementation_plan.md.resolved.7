@@ -1,0 +1,22 @@
+# Implementation Plan - Sea Shell Cursor
+
+I will create a custom sea shell cursor to replace the default pointer, enhancing the playful/calm aesthetic.
+
+## Proposed Changes
+
+### Assets
+#### [NEW] [assets/images/cursor-shell.png](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/images/cursor-shell.png)
+- Generate a small (32x32 or 64x64) transparent PNG of a sea shell.
+- Style: Minimal, pastel or white icon style to match the site.
+
+### CSS
+#### [MODIFY] [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- Apply `cursor: url('../assets/images/cursor-shell.png') 16 16, auto;` to `body` and `a`.
+- The `16 16` sets the hotspot to the center (if 32px) or adjust based on image.
+
+## Verification Plan
+
+### Manual Verification
+- Move mouse over the page.
+- Verify the cursor serves as a sea shell graphic.
+- Check hover states on links (ensure it persists or changes appropriately).

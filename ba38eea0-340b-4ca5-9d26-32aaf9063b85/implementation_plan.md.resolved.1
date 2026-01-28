@@ -1,0 +1,31 @@
+# Implementation Plan - Meet Sona Hover Carousel
+
+To make the "Meet Sona" section more engaging, I will turn the static image into a carousel that cycles through images when hovered.
+
+## Proposed Changes
+
+### HTML
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Replace the single `<img>` in `.meet-sona-image` with a container holding [carousel-1.png](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/images/carousel-1.png), [carousel-2.png](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/images/carousel-2.png), and [carousel-3.png](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/assets/images/carousel-3.png).
+- Add class classes like `.carousel-img`.
+
+### CSS
+#### [MODIFY] [f1.css](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/css/f1.css)
+- Update `.meet-sona-image` to support absolute positioning of children (`position: relative`).
+- Style `.carousel-img`:
+    - `position: absolute` (except maybe the first one to hold relative height, or handling aspect ratio explicitly). *Refinement*: Better to make them all absolute and give the container a fixed aspect ratio or height, OR make the first one `position: relative` and `visibility: hidden` (to set size) while absolute positioning others on top. Actually, stacking them all absolute and setting container dimensions is cleaner if dimensions are known. The current design uses flexbox stretching. I'll stick to `position: absolute` and `width: 100%, height: 100%` since the container `.meet-sona-image` already has layout constraints.
+    - Set default `opacity: 0`, `transition: opacity 0.5s ease`.
+    - `.carousel-img.active { opacity: 1; }`
+
+### JavaScript
+#### [MODIFY] [index.html](file:///c:/Users/hp/.gemini/antigravity/scratch/sona-landing-page/index.html)
+- Add a script at the bottom:
+    - Target `.meet-sona-image`.
+    - On `mouseenter`: Start an interval. Look for the currently active image, remove active, add active to the next one. Loop.
+    - On `mouseleave`: Clear interval. Reset to the first image (or just stop).
+
+## Verification Plan
+### Manual Verification
+- Hover over the image in the "Meet Sona" section.
+- Verify images cycle smoothly.
+- Move cursor out, verify it stops or resets.
